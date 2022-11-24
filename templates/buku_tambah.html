@@ -1,0 +1,38 @@
+{% extends 'page.html' %}
+
+{% block content %}
+<div class="container">
+   <div class="content-center brand">
+      <form method="POST">
+         {% csrf_token %}
+         &nbsp;&nbsp;
+         <div class="form-group">
+            <label for="exampleFormControlSelect1">Kategori</label>
+            <select name="category" class="form-control" id="exampleFormControlSelect1">
+             {% for c in category %}
+             {% if get_buku.category == c %}
+                <option value"{{ c.nama }}" selected="selected"{{ c.nama }}</option>
+             {% else %}
+                <option value"{{ c.nama }}">{{ c.nama }}</option>
+             {% endif %}
+             {% endfor %}
+            </select>
+          </div>
+         <div class="form-group">
+           <label for="exampleFormControlInput1">Nama</label>
+           <input type="text" class="form-control" id="exampleFormControlInput1" name="nama" value="{{ get_buku.nama }}">
+         </div>
+         <div class="form-group">
+            <label for="exampleFormControlTextarea1">Deskripsi</label>
+            <textarea name="deskripsi" class="form-control" id="exampleFormControlTextarea1" rows="3">++{{ get_buku.deskripsi }}</textarea>
+          </div>
+         <div class="form-group">
+            <label for="exampleFormControlInput1">Jumlah</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="jumlah" value="{{ get_buku.jumlah }}">
+          </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+       </form>
+   </div>
+<div>
+
+{% endblock content%}
