@@ -1,0 +1,72 @@
+{% extends 'front/page.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="content-center brand">
+    &nbsp;&nbsp;
+   <div class="card  card-plain">
+     <div class="card-header">
+       <h6 class="card-title">Data buku / 도서 데이터</h6>
+       <a href="{% url 'buku_add' %}" type="button" class="btn btn-primary">도서 추가</a>
+     </div>
+     <div class="card-body">
+       <div class="table-responsive">
+         <table class="table tablesorter " id="">
+           <thead class="">
+             <tr>
+               <th class="text-center">
+                No
+              </th>
+               <th class="text-center">
+                 Nama
+               </th>
+               <th class="text-center">
+                 Deskripsi
+               </th>
+               <th class="text-center">
+                 Kategori
+               </th>
+               <th class="text-right">
+                 Jumlah
+               </th>
+               <th class="text-right">
+                 Actions
+               </th>
+             </tr>
+           </thead>
+           <tbody>
+              {% for b in buku %}
+             <tr>
+               <td class="text-center">
+                {{ forloop.counter }}
+               </td>
+               <td class="text-center">
+                {{ b.nama }}
+               </td>
+               <td class="text-center">
+                {{ b.deskripsi }}
+               </td>
+               <td class="text-center">
+                {{ b.category }}
+               </td>
+               <td class="text-right">
+                {{ b.jumlah }}
+               </td>
+               <td class="text-right">
+                 <a  href="{% url 'buku_update' b.id %}" type="button" rel="tooltip" class="btn btn-success btn-icon btn-sm ">
+                   <i class="tim-icons icon-settings"></i>
+                 </a>
+                 <a  href="{% url 'buku_delete' b.id %}" type="button" rel="tooltip" class="btn btn-danger btn-icon btn-sm ">
+                   <i class="tim-icons icon-simple-remove"></i>
+                 </a>
+               </td>
+             </tr>
+             {% endfor %}
+           </tbody>
+         </table>
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
+{% endblock content %}

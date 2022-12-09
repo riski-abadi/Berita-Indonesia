@@ -2,9 +2,15 @@ from django.shortcuts import redirect, render
 
 from buku.models import *
 
+def dashboard(request):
+   template_name = "back/dashboard.html"
+   context = {
+      'title' : 'dashboard'
+   }
+   return render(request, template_name, context)
 
 def buku_list(request):
-   template_name  = 'buku_list.html'
+   template_name  = 'back/buku_list.html'
    buku_list = Buku.objects.all()
    context = {
       'title':'ini adalah halaman buku',
@@ -14,7 +20,7 @@ def buku_list(request):
 
 
 def buku_add(request):
-   template_name  = 'buku_tambah.html'
+   template_name  = 'back/buku_tambah.html'
    category = Category.objects.all()
    if request.method == "POST":
       
@@ -43,7 +49,7 @@ def buku_add(request):
 
 
 def buku_update(request, id):
-   template_name  = 'buku_tambah.html'
+   template_name  = 'back/buku_tambah.html'
    category = Category.objects.all()
    get_buku = Buku.objects.get(id=id)
    if request.method == "POST":
@@ -75,3 +81,4 @@ def buku_update(request, id):
 def buku_delete(request, id):
    Buku.objects.get(id=id).delete()
    return redirect(buku_list)
+
