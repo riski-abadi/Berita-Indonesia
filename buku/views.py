@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 
-from buku.models import *
+from .models import Buku,Category
 
 def dashboard(request):
    template_name = "back/dashboard.html"
@@ -11,10 +11,10 @@ def dashboard(request):
 
 def buku_list(request):
    template_name  = 'back/buku_list.html'
-   buku_list = Buku.objects.all()
+   buku = Buku.objects.all()
    context = {
       'title':'ini adalah halaman buku',
-      'buku':buku_list
+      'buku':buku,
    }
    return render(request, template_name, context)
 
@@ -81,4 +81,6 @@ def buku_update(request, id):
 def buku_delete(request, id):
    Buku.objects.get(id=id).delete()
    return redirect(buku_list)
+   
+    
 

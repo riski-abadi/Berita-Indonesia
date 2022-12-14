@@ -16,4 +16,8 @@ class Buku(models.Model):
    def __str__(self):
       return self.nama
    
+   class meta :
+      ordering = ['-id']
+      verbose_name_plural = "Buku"
+   
 # Create your models here.

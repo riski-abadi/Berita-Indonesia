@@ -1,0 +1,162 @@
+{% extends 'front/page.html' %}
+{% load static %}
+{% block content %}
+   <!-- End Navbar -->
+   <div class="wrapper">
+     <div class="page-header page-header-small header-filter">
+       <div class="page-header-image" data-parallax="true" style="background-image: url('{% static 'front/img/ruvim-noga.jpg' %}');">
+       </div>
+       <div class="content-center">
+         <div class="row">
+           <div class="col-md-6 ml-auto mr-auto text-center">
+             <h1 class="title">A Place for Entrepreneurs to Share and Discover New Stories</h1>
+             <a href="#button" class="btn btn-primary btn-round  btn-icon">
+               <i class="fab fa-twitter"></i>
+             </a>
+             <a href="#button" class="btn btn-primary btn-round  btn-icon">
+               <i class="fab fa-instagram"></i>
+             </a>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+     <div class="main main-raised">
+       <div class="container">
+         <div class="row">
+            {% for a in buku  %}
+           <div class="col-lg-4 col-md-6">
+             <div class="card card-blog card-plain">
+               <div class="card-image">
+                 <a href="javascript:;">
+                   <img class="img rounded" src="{% static 'front/img/steven-roe.jpg' %}">
+                 </a>
+               </div>
+               <div class="card-body">
+                 <h6 class="category text-primary"{{a.category}}</h6>
+                 <h4 class="card-title">
+                   <a href="javascript:;">{{a.judul}}</a>
+                 </h4>
+                 <p class="card-description">
+                  {{a.deskripsi}}
+                 </p>
+                 <div class="card-footer">
+                   <div class="author">
+                     <img src="{% static 'front/img/p10.jpg' %}" alt="..." class="avatar img-raised">
+                     <span>Mike John</span>
+                   </div>
+                   <div class="stats stats-right">
+                     <i class="tim-icons icon-watch-time"></i> 5 min read
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           {% endfor %}
+         </div>
+       </div>
+       
+       <div class="section blogs-4">
+         <div class="container-fluid">
+           <h1 class="title text-center">Stay tuned with our fresh stories</h1>
+           <br/>
+           <div class="row">
+             <div class="col-lg-3">
+               <div class="card card-blog card-background" data-animation="zooming">
+                 <div class="full-background" style="background-image: url('{% static 'front/img/viktor-forgacs.jpg' %}')"></div>
+                 <div class="card-body">
+                   <div class="content-bottom">
+                     <h6 class="card-category">Climate Change</h6>
+                     <a href="javascript:;">
+                       <h3 class="card-title">Stellar Partnership</h3>
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="col-lg-3">
+               <div class="card card-blog card-background" data-animation="zooming">
+                 <div class="full-background" style="background-image: url('{% static 'front/img/rezaul-karim.jpg' %}')"></div>
+                 <div class="card-body">
+                   <div class="content-bottom">
+                     <h6 class="card-category">Save the World</h6>
+                     <a href="javascript:;">
+                       <h3 class="card-title">Digital Currency</h3>
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="col-lg-3">
+               <div class="card card-blog card-background" data-animation="zooming">
+                 <div class="full-background" style="background-image: url('{% static 'front/img/pawel-nolbert.jpg' %}')"></div>
+                 <div class="card-body">
+                   <div class="content-bottom">
+                     <h6 class="card-category">Applications Companies</h6>
+                     <a href="javascript:;">
+                       <h3 class="card-title">Blockchain Explained</h3>
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="col-lg-3">
+               <div class="card card-blog card-background" data-animation="zooming">
+                 <div class="full-background" style="background-image: url('{% static 'front/img/mark-finn.jpg' %}')"></div>
+                 <div class="card-body">
+                   <div class="content-bottom">
+                     <h6 class="card-category">RFID microchips</h6>
+                     <a href="javascript:;">
+                       <h3 class="card-title">A Robot is Your Co-Worker</h3>
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+      
+       <div class="title text-center">
+         <h3>Show us some love</h3>
+       </div>
+       <div class="social-line social-line-big-icons">
+         <div class="container">
+           <div class="row">
+             <div class="col-md-2">
+               <a href="javascript:;" class="btn btn-icon btn-simple btn-twitter btn-footer">
+                 <i class="fab fa-twitter"></i>
+               </a>
+             </div>
+             <div class="col-md-2">
+               <a href="javascript:;" class="btn btn-icon btn-simple btn-facebook btn-footer">
+                 <i class="fab fa-facebook-square"></i>
+               </a>
+             </div>
+             <div class="col-md-2">
+               <a href="javascript:;" class="btn btn-icon btn-simple btn-google btn-footer">
+                 <i class="fab fa-google-plus"></i>
+               </a>
+             </div>
+             <div class="col-md-2">
+               <a href="javascript:;" class="btn btn-icon btn-simple btn-dribbble btn-footer">
+                 <i class="fab fa-dribbble"></i>
+               </a>
+             </div>
+             <div class="col-md-2">
+               <a href="javascript:;" class="btn btn-icon btn-simple btn-youtube btn-footer">
+                 <i class="fab fa-youtube"></i>
+               </a>
+             </div>
+             <div class="col-md-2">
+               <a href="javascript:;" class="btn btn-icon btn-simple btn-instagram btn-footer">
+                 <i class="fab fa-instagram"></i>
+               </a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+    
+   </div>
+   {% endblock content %}

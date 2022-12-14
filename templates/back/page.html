@@ -29,17 +29,11 @@
     -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          CT
+          AD
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+          Akun Admin
         </a>
-        <div class="navbar-minimize">
-          <button id="minimizeSidebar" class="btn btn-outline-white btn-icon btn-round">
-            <i class="now-ui-icons text_align-center visible-on-sidebar-regular"></i>
-            <i class="now-ui-icons design_bullet-list-67 visible-on-sidebar-mini"></i>
-          </button>
-        </div>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <div class="user">
@@ -69,9 +63,9 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">S</span>
-                    <span class="sidebar-normal">Settings</span>
+                  <a href="{% url 'logout' %}">
+                    <span class="sidebar-mini-icon">L</span>
+                    <span class="sidebar-normal">Logout</span>
                   </a>
                 </li>
               </ul>
@@ -79,6 +73,12 @@
           </div>
         </div>
         <ul class="nav">
+          <li>
+            <a href="{% url 'index' %}" "examples/dashboard.html">
+              <i class="now-ui-icons media-1_album"></i>
+              <p>Over View</p>
+            </a>
+          </li>
           <li>
             <a href="{% url 'buku_list' %}" "examples/dashboard.html">
               <i class="now-ui-icons design_app"></i>
@@ -89,12 +89,6 @@
             <a href=" " "examples/charts.html">
               <i class="now-ui-icons business_chart-pie-36"></i>
               <p>List User</p>
-            </a>
-          </li>
-          <li>
-            <a href=" " "examples/calendar.html">
-              <i class="now-ui-icons media-1_album"></i>
-              <p>Calendar</p>
             </a>
           </li>
         </ul>

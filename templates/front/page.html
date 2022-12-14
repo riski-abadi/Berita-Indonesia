@@ -36,11 +36,22 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'index' %}">Home/Beranda <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'berita' %}">Berita <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">About</a>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
           </li>
+          <li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</li>
+          <li>
+            {% if request.user.is_anonymous %}
+                <a href="{% url 'login' %}" class="btn btn-round btn-default">Login</a>
+            {% else %}
+                <a href="{% url 'dashboard' %}" class="btn btn-round btn-default">Dashboard</a>
+            {% endif %}
+           </li>
         </ul>
       </div>
     </div>
