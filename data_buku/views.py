@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout
 from buku.models import Buku
-
+import requests
 def index(request):
    template_name  = 'front/index.html'
    context = {
@@ -61,5 +61,40 @@ def register(request):
     template_name = 'account/register.html'
     context = {
         'title':'form',
+        
     }
     return render(request, template_name, context)
+
+
+
+def berita(request):
+    buku = Buku.objects.all()
+    url = "https://newsapi.org/v2/top-headlines?country=id&apiKey=dc045a8f7399442b8d20d4b80f8b7cd3"
+
+    data = requests.get(url).json()
+
+    a = data['articles']
+    nama = []
+    judul = []
+    desc = []
+    link = []
+    isi = []
+    tanggal = []
+    image = []
+
+    for i in range(len(a)):
+        f = a[i]
+        judul.append(f['title'])
+        nama.append(f['author'])
+        desc.append(f['description'])
+        link.append(f['url'])
+        isi.append(f['content'])
+        tanggal.append(f['publishedAt'])
+        image.append(f['urlToImage'])
+        
+
+
+    mylist = zip(nama,judul,desc,link,isi,tanggal,image)
+    context ={'mylist':mylist , 'buku':buku}
+
+    return render(request, 'front/berita.html', context)

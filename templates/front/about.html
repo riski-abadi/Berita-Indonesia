@@ -1,23 +1,50 @@
 {% extends 'front/page.html' %}
+{% load static %}
 {% block content %}
-<div class="wrapper">
-   <div class="page-header">
-     <div class="squares square1"></div>
-     <div class="squares square2"></div>
-     <div class="squares square3"></div>
-     <div class="squares square4"></div>
-     <div class="squares square5"></div>
-     <div class="squares square6"></div>
-     <div class="squares square7"></div>
-     <div class="container">
-       <div class="content-center brand">
-         <h1 class="h1-seo">Berita</h1>
-         <p>Berita adalah informasi yang menyampaikan peristiwa yang sedang terjadi atau terkini, contoh teks berita pada umumnya disusun oleh seorang wartawan atau jurnalis. 
-          Isi dari teks ini berupa fakta yang didapatkan langsung dari lapangan maupun sumber dari jurnalis, sehingga dapat dipastikan bahwa isi dari teks berita ini merupakan kenyataan yang bisa dipercaya.
-          Menurut Kamus Besar Bahasa Indonesia (KBBI) berita merupakan cerita atau keterangan terkait kejadian atau peristiwa yang sedang terjadi. Teks berita adalah suatu teks untuk menyampaikan kabar atau informasi kepada masyarakat mengenai suatu peristiwa atau kejadian aktual dan faktual yang diinformasikan secara tertulis.
-          Dikatakan faktual karena teks berita sebaiknya ditulis secara berdasarkan kenyataan, sementara itu aktual yang merupakan kejadian yang dituliskan baru saja terjadi. Dapat disimpulkan apabila teks berita berisi mengenai segala kejadian atau peristiwa yang baru saja terjadi dan sedang hangat diperbincangkan oleh masyarakat luas dalam waktu tersebut.
-         </p>
-       </div>
-     </div>
-   </div>
+
+    <div class="section">
+      <div class="team-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+              <h2 class="title">Project Serderhana</h2>
+              <h4 class="description">Disni saya membuat website sederhana sesuai kemampuan dengan nim 2011102441029</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div id="carouselExampleControls" class="carousel slide carousel-team">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h1 class="title">Moh. Riski Abadi</h1>
+                      </div>
+                      <div class="col-md-4">
+                        <img class="d-block" src="{% static 'front/img/foto.jpg' %}" alt="First slide">
+                      </div>
+                      <div class="col-md-4">
+                        <div class="wrapper">
+                          <div class="category">
+                            <strong>Position:</strong> Mahasiswa
+                            <br/>
+                            <strong>Experience:</strong> 4 bulan
+                          </div>
+                          <div class="description">
+                            Halo semuanya, Saya Moh. Riski Abadi angkatan 2020 Mahasiswa TI, nah disini saya membuat website sederhana walaupun masih banyak kurangnya, tapi namanya belajar butuh proses tidak Instant, mohon doanya ya teman - teman
+                          <div class="footer">
+                            <a href="https://twitter.com/MohRiskiAbadi" class="btn btn-icon btn-twitter btn-round"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/riski.abadi69" class="btn btn-icon btn-facebook btn-round"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://www.instagram.com/riski_moonz/" class="btn btn-icon btn-dribbble btn-round"><i class="fab fa-instagram"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 {% endblock content %}

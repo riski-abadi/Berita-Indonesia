@@ -21,3 +21,12 @@ class Buku(models.Model):
       verbose_name_plural = "Buku"
    
 # Create your models here.
+class Berita(models.Model):
+   title = models.CharField(max_length=150)
+   link = models.CharField(max_length=150)
+   pubDate = models.CharField(max_length=150)
+   description = models.CharField(max_length=150)
+   thumbnail = models.CharField(max_length=150)
+   
+   def __str__(self):
+      return self.title

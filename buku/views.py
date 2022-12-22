@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 
-from .models import Buku,Category
+from buku.models import *
+import requests
 
 def dashboard(request):
    template_name = "back/dashboard.html"
@@ -15,6 +16,14 @@ def buku_list(request):
    context = {
       'title':'ini adalah halaman buku',
       'buku':buku,
+   }
+   return render(request, template_name, context)
+def berita(request):
+   template_name  = 'back/berita_list.html'
+   berita = Berita.objects.all()
+   context = {
+      'title':'ini adalah halaman berita',
+      'berita':berita,
    }
    return render(request, template_name, context)
 
@@ -81,6 +90,28 @@ def buku_update(request, id):
 def buku_delete(request, id):
    Buku.objects.get(id=id).delete()
    return redirect(buku_list)
+
+def sinkron_berita(request):
+        url = "https://masak-apa-tomorisakura.vercel.app/api/recipes"
+        data = requests.get(url).json()
+        for d in data['data']:
+            cek_berita = Berita.objects.filter(title=d['title'])
+            if cek_berita:
+                print('data sudah ada')
+                c = cek_berita.first()
+                c.title=d['title']
+                c.save()
+            else: 
+                #jika belum ada maka tulis baru kedatabase
+                b = Berita.objects.create(
+                    title = d['title'],
+                    link = d['link'],
+                    pubDate = d['pubDate'],
+                    description = d['description'],
+                    thumbnail = d['thumbnail'],
+                    # gambar = d['thumb'],
+                )
+        return redirect(resep)
    
     
 
