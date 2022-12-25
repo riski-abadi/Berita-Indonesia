@@ -9,5 +9,5 @@ class BukuAdmin(admin.ModelAdmin):
 admin.site.register(Buku, BukuAdmin)
 
 class BeritaAdmin(admin.ModelAdmin):
-   list_display = ['title', 'link','pubDate','description','thumbnail']
+   list_display = ['title','author', 'url','urlToImage','publishedAt','content']
 admin.site.register(Berita, BeritaAdmin)

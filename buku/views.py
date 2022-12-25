@@ -92,9 +92,9 @@ def buku_delete(request, id):
    return redirect(buku_list)
 
 def sinkron_berita(request):
-        url = "https://masak-apa-tomorisakura.vercel.app/api/recipes"
+        url = "https://newsapi.org/v2/top-headlines?country=id&apiKey=dc045a8f7399442b8d20d4b80f8b7cd3"
         data = requests.get(url).json()
-        for d in data['data']:
+        for d in data['articles']:
             cek_berita = Berita.objects.filter(title=d['title'])
             if cek_berita:
                 print('data sudah ada')
@@ -104,14 +104,15 @@ def sinkron_berita(request):
             else: 
                 #jika belum ada maka tulis baru kedatabase
                 b = Berita.objects.create(
+                    author = d['author'],
                     title = d['title'],
-                    link = d['link'],
-                    pubDate = d['pubDate'],
                     description = d['description'],
-                    thumbnail = d['thumbnail'],
-                    # gambar = d['thumb'],
+                    url = d['url'],
+                    urlToImage = d['urlToImage'],
+                    publishedAt = d['publishedAt'],
+                    content = d['content'],
                 )
-        return redirect(resep)
+        return redirect(berita)
    
     
 

@@ -23,22 +23,26 @@
             <thead>
               <tr>
                 <th>No </th>
-                <th>Tittle</th>
-                <th>link</th>
-                <th>pubDate</th>
+                <th>author</th>
+                <th>title</th>
                 <th>description</th>
-                <th>thumbnail</th>
+                <th>url</th>
+                <th>urlToImage</th>
+                <th>publishedAt</th>
+                <th>content</th>
                 <th class="disabled-sorting text-right">Pilihan</th>
               </tr>
             </thead>
             <tfoot>
                <tr>
-                  <th>No </th>
-                  <th>Tittle</th>
-                  <th>link</th>
-                  <th>pubDate</th>
-                  <th>description</th>
-                  <th>thumbnail</th>
+                <th>No </th>
+                <th>author</th>
+                <th>title</th>
+                <th>description</th>
+                <th>url</th>
+                <th>urlToImage</th>
+                <th>publishedAt</th>
+                <th>content</th>
                   <th class="disabled-sorting text-right">Pilihan</th>
                 </tr>
             </tfoot>
@@ -46,11 +50,13 @@
                {% for b in berita %}
               <tr>
                 <td>{{ forloop.counter }}</td>
-                <td> {{ b.title }}</td>
-                <td>{{ b.link }}</td>
-                <td>{{ b.pubDate }}</td>
+                <td> {{ b.author }}</td>
+                <td>{{ b.title }}</td>
                 <td>{{ b.description }}</td>
-                <td>{{ b.thumbnail }}</td>
+                <td>{{ b.url }}</td>
+                <td>{{ b.urlToImage }}</td>
+                <td>{{ b.publishedAt }}</td>
+                <td>{{ b.content }}</td>
                 <td class="text-right">
                   <a href="{}" class="btn btn-round btn-warning btn-icon btn-sm edit"><i class="far fa-calendar-alt"></i></a>
                   <a href="" class="btn btn-round btn-danger btn-icon btn-sm "><i class="fas fa-times"></i></a>
